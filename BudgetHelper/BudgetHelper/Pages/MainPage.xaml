@@ -5,18 +5,7 @@
              x:Class="BudgetHelper.Pages.MainPage">
     <ContentPage.Content>
         <Grid>
-            <BoxView x:Name="bdGradient" Scale="4" AnchorX="1" AnchorY="0">
-                <BoxView.Background>
-                    <LinearGradientBrush>
-                        <GradientStop Color="#23D5AB" Offset="0.3"/>
-                        <GradientStop Color="#23A605" Offset="0.5" />
-                        <GradientStop Color="#E73C7E" Offset="0.7" />
-                        <GradientStop Color="#EE7752" Offset="1.0" />
-                    </LinearGradientBrush>
-                </BoxView.Background>
-            </BoxView>
-
-
+            <BoxView x:Name="bdGradient" Scale="4" AnchorX="1" AnchorY="0" Style="{StaticResource BackgroundBoxViewStyle}"/>
             <Frame WidthRequest="250"  BorderColor="White" BackgroundColor="Transparent"
                    VerticalOptions="Center" HorizontalOptions="Center" >
                 <Label Text="ANIMATED GRADIENT BACKGROUND" TextColor="White"
