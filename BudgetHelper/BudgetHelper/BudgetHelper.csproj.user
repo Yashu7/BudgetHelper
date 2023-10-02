@@ -5,5 +5,8 @@
     <EmbeddedResource Update="Styles\BackgroundStyles.xaml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Update="Styles\FrameStyles.xaml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -5,11 +5,8 @@
              x:Class="BudgetHelper.Pages.MainPage">
     <ContentPage.Content>
         <Grid>
-            <BoxView x:Name="bdGradient" Scale="4" AnchorX="1" AnchorY="0" Style="{StaticResource BackgroundBoxViewStyle}"/>
-            <Frame WidthRequest="250"  BorderColor="White" BackgroundColor="Transparent"
-                   VerticalOptions="Center" HorizontalOptions="Center" >
-                <Label Text="ANIMATED GRADIENT BACKGROUND" TextColor="White"
-                           HorizontalTextAlignment="Center" FontSize="30"/>
+            <BoxView Scale="4" AnchorX="1" AnchorY="0" Style="{StaticResource BackgroundBoxViewStyle}"/>
+            <Frame Style="{StaticResource MainButtonBlackFrame}">
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding TappedMainFrame}"/>
                 </Frame.GestureRecognizers>

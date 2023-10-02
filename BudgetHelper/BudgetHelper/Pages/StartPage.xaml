@@ -6,8 +6,7 @@
     <ContentPage.Content>
         <Grid>
             <BoxView x:Name="bdGradient" Scale="4" AnchorX="1" AnchorY="0" Style="{StaticResource BackgroundBoxViewStyle}"/>
-            <Frame WidthRequest="250"  BorderColor="Black" BackgroundColor="Transparent"
-                   VerticalOptions="Center" HorizontalOptions="Center" >
+            <Frame Style="{StaticResource MainButtonBlackFrame}">
                 <Label Text="LOGIN" TextColor="Black"
                        HorizontalTextAlignment="Center" FontSize="20"/>
                 <Frame.GestureRecognizers>
