@@ -16,6 +16,11 @@
         },
         "runtime": {
           "BudgetHelper.dll": {}
+        },
+        "resources": {
+          "en/BudgetHelper.resources.dll": {
+            "locale": "en"
+          }
         }
       },
       "FreshMvvm/4.0.1": {

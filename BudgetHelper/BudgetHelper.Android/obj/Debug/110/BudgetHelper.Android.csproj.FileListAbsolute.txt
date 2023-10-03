@@ -579,3 +579,4 @@ C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debu
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\bin\Debug\en-US\BudgetHelper.resources.dll

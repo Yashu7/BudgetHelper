@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              NavigationPage.HasNavigationBar="false" 
-             x:Class="BudgetHelper.Pages.MainPage">
+             x:Class="BudgetHelper.Pages.MainPage"
+             xmlns:resources="clr-namespace:BudgetHelper.Localization">
     <ContentPage.Content>
         <Grid>
             <BoxView Scale="4" AnchorX="1" AnchorY="0" BackgroundColor="#23A605"/>
@@ -12,15 +13,26 @@
                             SelectionChangedCommandParameter="{Binding SelectedProduct}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame BackgroundColor="Transparent" BorderColor="Gray">
-                            <StackLayout Padding="10" Orientation="Horizontal">
-                                <Label Text="{Binding Name}" VerticalTextAlignment="Center"/>
-                                <Label Text="{Binding IsOpen}" VerticalTextAlignment="Center"/>
-                                <Label Text="{Binding DaysToExpireAfterOpening}" VerticalTextAlignment="Center"/>
-                                <Label Text="{Binding BroughtDate}" VerticalTextAlignment="Center"/>
-                                <Label Text="{Binding ExpireDate}" VerticalTextAlignment="Center"/>
-                                <Label Text="{Binding ExpireDateAfterOpen}" VerticalTextAlignment="Center"/>
-                            </StackLayout>
+                        <Frame BackgroundColor="Transparent" BorderColor="Transparent" >
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <StackLayout Grid.Column="0" Orientation="Vertical">
+                                    <Label Text="{Binding Name}" VerticalTextAlignment="Center"/>
+                                    <Label Text="{x:Static resources:AppResources.BroughtDate}" />
+                                </StackLayout>
+                                <StackLayout Grid.Column="1" Orientation="Vertical">
+                                    <Label Text="{Binding IsOpen}" VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding DaysToExpireAfterOpening}" VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding BroughtDate}" VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding ExpireDate}" VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding ExpireDateAfterOpen}" VerticalTextAlignment="Center"/>
+                                </StackLayout>
+
+                            </Grid>
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
