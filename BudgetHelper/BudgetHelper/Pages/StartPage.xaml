@@ -7,7 +7,7 @@
         <Grid>
             <BoxView x:Name="bdGradient" Scale="4" AnchorX="1" AnchorY="0" Style="{StaticResource BackgroundBoxViewStyle}"/>
             <Frame Style="{StaticResource MainButtonBlackFrame}">
-                <Label Text="LOGIN" TextColor="Black"
+                <Label Text="LOGIN" TextColor="#262D2C"
                        HorizontalTextAlignment="Center" FontSize="20"/>
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding NavigateToMainPageCommand}"/>

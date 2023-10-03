@@ -5,12 +5,18 @@
              x:Class="BudgetHelper.Pages.MainPage">
     <ContentPage.Content>
         <Grid>
-            <BoxView Scale="4" AnchorX="1" AnchorY="0" Style="{StaticResource BackgroundBoxViewStyle}"/>
-            <Frame Style="{StaticResource MainButtonBlackFrame}">
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding TappedMainFrame}"/>
-                </Frame.GestureRecognizers>
-            </Frame>
+            <BoxView Scale="4" AnchorX="1" AnchorY="0" BackgroundColor="#23A605"/>
+            <CollectionView ItemsSource="{Binding CreatedItems}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" Orientation="Horizontal">
+                            <Label Text="{Binding .}" VerticalTextAlignment="Center"/>
+                            <Label Text="{Binding .}" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button VerticalOptions="End" Text="Delete item" Command="{Binding DeleteItemCommand}"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
