@@ -6,17 +6,25 @@
     <ContentPage.Content>
         <Grid>
             <BoxView Scale="4" AnchorX="1" AnchorY="0" BackgroundColor="#23A605"/>
-            <CollectionView ItemsSource="{Binding CreatedItems}">
+            <CollectionView ItemsSource="{Binding ProductItems}" SelectionMode="Single"
+                            SelectionChangedCommand="{Binding DeleteItemCommand}"
+                            SelectedItem="{Binding SelectedProduct}"
+                            SelectionChangedCommandParameter="{Binding SelectedProduct}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Padding="10" Orientation="Horizontal">
-                            <Label Text="{Binding .}" VerticalTextAlignment="Center"/>
-                            <Label Text="{Binding .}" VerticalTextAlignment="Center"/>
-                        </StackLayout>
+                        <Frame BackgroundColor="Transparent" BorderColor="Gray">
+                            <StackLayout Padding="10" Orientation="Horizontal">
+                                <Label Text="{Binding Name}" VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding IsOpen}" VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding DaysToExpireAfterOpening}" VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding BroughtDate}" VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding ExpireDate}" VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding ExpireDateAfterOpen}" VerticalTextAlignment="Center"/>
+                            </StackLayout>
+                        </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button VerticalOptions="End" Text="Delete item" Command="{Binding DeleteItemCommand}"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
