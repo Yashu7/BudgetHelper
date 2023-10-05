@@ -120,4 +120,19 @@
   <data name="BroughtDate" xml:space="preserve">
     <value>Brought Date:</value>
   </data>
+  <data name="Closed" xml:space="preserve">
+    <value>Packaged</value>
+  </data>
+  <data name="DaysToExpireAfterOpening" xml:space="preserve">
+    <value>Expiration date (after opening):</value>
+  </data>
+  <data name="ExpireDate" xml:space="preserve">
+    <value>Expiration date:</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Opened</value>
+  </data>
+  <data name="OpenedDate" xml:space="preserve">
+    <value>Opening date:</value>
+  </data>
 </root>

@@ -12,7 +12,7 @@ namespace BudgetHelper
         public App()
         {
             //Changing to english for testing resource file purposes
-            //CultureInfo.CurrentUICulture = new CultureInfo("en-US", false);
+            CultureInfo.CurrentUICulture = new CultureInfo("pl-PL", false);
             InitializeComponent();
             var page = FreshPageModelResolver.ResolvePageModel<StartPageModel>();
             MainPage = new FreshNavigationContainer(page);

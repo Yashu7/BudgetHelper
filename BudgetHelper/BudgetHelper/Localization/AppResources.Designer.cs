@@ -68,5 +68,50 @@ namespace BudgetHelper.Localization {
                 return ResourceManager.GetString("BroughtDate", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zapakowane.
+        /// </summary>
+        internal static string Closed {
+            get {
+                return ResourceManager.GetString("Closed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data ważności (p.o.):.
+        /// </summary>
+        internal static string DaysToExpireAfterOpening {
+            get {
+                return ResourceManager.GetString("DaysToExpireAfterOpening", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data ważności:.
+        /// </summary>
+        internal static string ExpireDate {
+            get {
+                return ResourceManager.GetString("ExpireDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Otwarte.
+        /// </summary>
+        internal static string Open {
+            get {
+                return ResourceManager.GetString("Open", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data otwarcia:.
+        /// </summary>
+        internal static string OpenedDate {
+            get {
+                return ResourceManager.GetString("OpenedDate", resourceCulture);
+            }
+        }
     }
 }

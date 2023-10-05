@@ -18,8 +18,8 @@
           "BudgetHelper.dll": {}
         },
         "resources": {
-          "en/BudgetHelper.resources.dll": {
-            "locale": "en"
+          "en-US/BudgetHelper.resources.dll": {
+            "locale": "en-US"
           }
         }
       },
