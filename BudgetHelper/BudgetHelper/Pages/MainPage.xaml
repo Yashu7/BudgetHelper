@@ -44,7 +44,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button VerticalOptions="End" HorizontalOptions="End" Margin="25" Text="+"></Button>
+            <Button VerticalOptions="End" HorizontalOptions="End" Margin="25" Command="{Binding NavigateToAddViewCommand}" Text="+"></Button>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -135,4 +135,7 @@
   <data name="OpenedDate" xml:space="preserve">
     <value>Opening date:</value>
   </data>
+  <data name="ProductNameInput" xml:space="preserve">
+    <value>Product name</value>
+  </data>
 </root>

@@ -113,5 +113,14 @@ namespace BudgetHelper.Localization {
                 return ResourceManager.GetString("OpenedDate", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nazwa produktu.
+        /// </summary>
+        internal static string ProductNameInput {
+            get {
+                return ResourceManager.GetString("ProductNameInput", resourceCulture);
+            }
+        }
     }
 }

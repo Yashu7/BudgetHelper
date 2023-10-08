@@ -11,6 +11,7 @@ namespace BudgetHelper.ViewModels
     class MainPageModel : FreshBasePageModel
     {
         public Command<ProductItem> DeleteItemCommand { get; set; }
+        public Command NavigateToAddViewCommand { get; set; }
         public ObservableCollection<ProductItem> ProductItems { get; set; }
         private ProductItem _selectedProduct;
         public ProductItem SelectedProduct
@@ -27,17 +28,27 @@ namespace BudgetHelper.ViewModels
         }
         public MainPageModel()
         {
+            InitializeCommands();
+            InitializeMainList();
+        }
+        private void InitializeCommands()
+        {
             DeleteItemCommand = new Command<ProductItem>(DeleteItem);
+            NavigateToAddViewCommand = new Command(NavigateToAddViev);
+        }
+        private void InitializeMainList()
+        {
+            ///Mock data, delete later
             ProductItems = new ObservableCollection<ProductItem>()
             {
-                new ProductItem("Bread",3,DateTime.Now,DateTime.Now.AddDays(7)),
-                new ProductItem("Bread",3,DateTime.Now,DateTime.Now.AddDays(7)),
-                new ProductItem("Bread",3,DateTime.Now,DateTime.Now.AddDays(7)),
-                new ProductItem("Bread",3,DateTime.Now,DateTime.Now.AddDays(7)),
-                new ProductItem("Bread",3,DateTime.Now,DateTime.Now.AddDays(7)),
-                new ProductItem("Bread",3,DateTime.Now,DateTime.Now.AddDays(7)),
-                new ProductItem("Bread",3,DateTime.Now,DateTime.Now.AddDays(7)),
-                new ProductItem("Cola",1,DateTime.Now,DateTime.Now.AddMonths(3),true)
+                new ProductItem("Bread", 3, DateTime.Now, DateTime.Now.AddDays(7)),
+                new ProductItem("Bread", 3, DateTime.Now, DateTime.Now.AddDays(7)),
+                new ProductItem("Bread", 3, DateTime.Now, DateTime.Now.AddDays(7)),
+                new ProductItem("Bread", 3, DateTime.Now, DateTime.Now.AddDays(7)),
+                new ProductItem("Bread", 3, DateTime.Now, DateTime.Now.AddDays(7)),
+                new ProductItem("Bread", 3, DateTime.Now, DateTime.Now.AddDays(7)),
+                new ProductItem("Bread", 3, DateTime.Now, DateTime.Now.AddDays(7)),
+                new ProductItem("Cola", 1, DateTime.Now, DateTime.Now.AddMonths(3), true)
             };
         }
         public async void TestFrame()
@@ -47,6 +58,10 @@ namespace BudgetHelper.ViewModels
         public async void DeleteItem(ProductItem productItem)
         {
             ProductItems.Remove(productItem);
+        }
+        public async void NavigateToAddViev()
+        {
+            await CoreMethods.PushPageModel<AddProductPageModel>(false);
         }
     }
 }

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="false" 
+              xmlns:resources="clr-namespace:BudgetHelper.Localization"
+             x:Class="BudgetHelper.Pages.AddProductPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Margin="20" Grid.Column="0" Orientation="Vertical">
+                <Entry Placeholder="{x:Static resources:AppResources.ProductNameInput}" FontSize="20" PlaceholderColor="Gray"/>
+                <Label VerticalTextAlignment="End" FontSize="15"
+                       Text="{x:Static resources:AppResources.BroughtDate}" />
+                <DatePicker MinimumDate="01/01/2018" MaximumDate="12/31/2023" 
+                            VerticalOptions="Start" FontSize="15"/>
+                <Label VerticalTextAlignment="End" FontSize="15"
+                       Text="{x:Static resources:AppResources.ExpireDate}" />
+                <DatePicker MinimumDate="01/01/2018" MaximumDate="12/31/2023" 
+                            VerticalOptions="Start" FontSize="15"/>
+            </StackLayout>
+            <Button Grid.ColumnSpan="2" HorizontalOptions="End" VerticalOptions="End" FontSize="50" Margin="0,0,15,15" Command="{Binding SaveProductCommand}" FontFamily="FA6R" Text="&#xf058;" TextColor="Green">
+              
+            </Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
