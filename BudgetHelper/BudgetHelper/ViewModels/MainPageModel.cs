@@ -31,6 +31,12 @@ namespace BudgetHelper.ViewModels
             ProductItems = new ObservableCollection<ProductItem>()
             {
                 new ProductItem("Bread",3,DateTime.Now,DateTime.Now.AddDays(7)),
+                new ProductItem("Bread",3,DateTime.Now,DateTime.Now.AddDays(7)),
+                new ProductItem("Bread",3,DateTime.Now,DateTime.Now.AddDays(7)),
+                new ProductItem("Bread",3,DateTime.Now,DateTime.Now.AddDays(7)),
+                new ProductItem("Bread",3,DateTime.Now,DateTime.Now.AddDays(7)),
+                new ProductItem("Bread",3,DateTime.Now,DateTime.Now.AddDays(7)),
+                new ProductItem("Bread",3,DateTime.Now,DateTime.Now.AddDays(7)),
                 new ProductItem("Cola",1,DateTime.Now,DateTime.Now.AddMonths(3),true)
             };
         }

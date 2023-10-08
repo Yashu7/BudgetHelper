@@ -30,13 +30,13 @@
                                     <Label Text="{Binding Name}" VerticalTextAlignment="Center"/>
                                     <Label Text="{x:Static resources:AppResources.BroughtDate}" />
                                     <Label Text="{x:Static resources:AppResources.ExpireDate}" />
-                                    <Label Text="{x:Static resources:AppResources.DaysToExpireAfterOpening}" />
+                                    <Label IsVisible="{Binding IsOpen}" Text="{x:Static resources:AppResources.DaysToExpireAfterOpening}" />
                                 </StackLayout>
                                 <StackLayout Grid.Column="1" Orientation="Vertical">
                                     <Label Text="{Binding IsOpen, Converter={StaticResource BoolToProductStatusConverter}}" VerticalTextAlignment="Center"/>
                                     <Label Text="{Binding BroughtDate}" VerticalTextAlignment="Center"/>
                                     <Label Text="{Binding ExpireDate}" VerticalTextAlignment="Center"/>
-                                    <Label Text="{Binding ExpireDateAfterOpen}" VerticalTextAlignment="Center"/>
+                                    <Label IsVisible="{Binding IsOpen}" Text="{Binding ExpireDateAfterOpen}" VerticalTextAlignment="Center"/>
                                 </StackLayout>
 
                             </Grid>
@@ -44,6 +44,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <Button VerticalOptions="End" HorizontalOptions="End" Margin="25" Text="+"></Button>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

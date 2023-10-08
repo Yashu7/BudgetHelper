@@ -10,7 +10,7 @@ namespace BudgetHelper.Helpers.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (value is bool) ? "Otwarte" : "Zapakowane";
+            return (bool)value == true ? "Otwarte" : "Zapakowane";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
