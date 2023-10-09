@@ -9,9 +9,13 @@ namespace BudgetHelper.Services.DEMO
 {
     public class ProductDemoService : IProductService
     {
-        public Task<int> DeleteProduct(int itemId)
+        public async Task<int> DeleteProduct(int itemId)
         {
-            throw new NotImplementedException();
+            if (ApplicationSession.GetInstance().ProductItems == null)
+                return 0;
+
+            ApplicationSession.GetInstance().ProductItems.RemoveAll(x => x.Id == itemId);
+            return 1;
         }
 
         public async Task<List<ProductItem>> GetProducts()
@@ -22,14 +26,22 @@ namespace BudgetHelper.Services.DEMO
             return ApplicationSession.GetInstance().ProductItems;
         }
 
-        public Task<ProductItem> PostProducts(List<ProductItem> products)
+        public async Task<int> PostProducts(List<ProductItem> products)
         {
-            throw new NotImplementedException();
+            if (ApplicationSession.GetInstance().ProductItems == null)
+                ApplicationSession.GetInstance().ProductItems = new List<ProductItem>();
+
+            ApplicationSession.GetInstance().ProductItems.AddRange(products);
+            return 1;
         }
 
-        public Task<int> PutProduct(ProductItem item)
+        public async Task<int> PutProduct(ProductItem item)
         {
-            throw new NotImplementedException();
+            if (ApplicationSession.GetInstance().ProductItems == null)
+                ApplicationSession.GetInstance().ProductItems = new List<ProductItem>();
+
+            ApplicationSession.GetInstance().ProductItems.Add(item);
+            return 1;
         }
         private void InitializeDemoProducts()
         {
