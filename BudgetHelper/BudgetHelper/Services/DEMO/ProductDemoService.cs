@@ -1,4 +1,5 @@
 ﻿using BudgetHelper.Models;
+using BudgetHelper.Singletons;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,9 +14,12 @@ namespace BudgetHelper.Services.DEMO
             throw new NotImplementedException();
         }
 
-        public Task<List<ProductItem>> GetProducts()
+        public async Task<List<ProductItem>> GetProducts()
         {
-            throw new NotImplementedException();
+            if (ApplicationSession.GetInstance().ProductItems == null)
+                InitializeDemoProducts();
+
+            return ApplicationSession.GetInstance().ProductItems;
         }
 
         public Task<ProductItem> PostProducts(List<ProductItem> products)
@@ -26,6 +30,14 @@ namespace BudgetHelper.Services.DEMO
         public Task<int> PutProduct(ProductItem item)
         {
             throw new NotImplementedException();
+        }
+        private void InitializeDemoProducts()
+        {
+            ApplicationSession.GetInstance().ProductItems = new List<ProductItem>()
+            {
+                new ProductItem("Bread", 3, DateTime.Now, DateTime.Now.AddDays(7)),
+                new ProductItem("Cola", 1, DateTime.Now, DateTime.Now.AddMonths(3), true)
+            };
         }
     }
 }

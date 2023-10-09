@@ -1,15 +1,18 @@
 ﻿using BudgetHelper.Models;
+using BudgetHelper.Services;
 using FreshMvvm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace BudgetHelper.ViewModels
 {
     class MainPageModel : FreshBasePageModel
     {
+        private IProductService _productService;
         public Command<ProductItem> DeleteItemCommand { get; set; }
         public Command NavigateToAddViewCommand { get; set; }
         public ObservableCollection<ProductItem> ProductItems { get; set; }
@@ -26,30 +29,22 @@ namespace BudgetHelper.ViewModels
                 RaisePropertyChanged("SelectedProduct");
             }
         }
-        public MainPageModel()
+        public MainPageModel(IProductService productService)
         {
             InitializeCommands();
-            InitializeMainList();
+            _productService = productService;
+            Task.Run(async () => await InitializeMainList());
         }
         private void InitializeCommands()
         {
             DeleteItemCommand = new Command<ProductItem>(DeleteItem);
             NavigateToAddViewCommand = new Command(NavigateToAddViev);
         }
-        private void InitializeMainList()
+        private async Task InitializeMainList()
         {
             ///Mock data, delete later
-            ProductItems = new ObservableCollection<ProductItem>()
-            {
-                new ProductItem("Bread", 3, DateTime.Now, DateTime.Now.AddDays(7)),
-                new ProductItem("Bread", 3, DateTime.Now, DateTime.Now.AddDays(7)),
-                new ProductItem("Bread", 3, DateTime.Now, DateTime.Now.AddDays(7)),
-                new ProductItem("Bread", 3, DateTime.Now, DateTime.Now.AddDays(7)),
-                new ProductItem("Bread", 3, DateTime.Now, DateTime.Now.AddDays(7)),
-                new ProductItem("Bread", 3, DateTime.Now, DateTime.Now.AddDays(7)),
-                new ProductItem("Bread", 3, DateTime.Now, DateTime.Now.AddDays(7)),
-                new ProductItem("Cola", 1, DateTime.Now, DateTime.Now.AddMonths(3), true)
-            };
+            var productList = await _productService.GetProducts();
+            ProductItems = new ObservableCollection<ProductItem>((IEnumerable<ProductItem>)productList);
         }
         public async void TestFrame()
         {

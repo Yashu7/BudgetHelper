@@ -1,4 +1,6 @@
-﻿using BudgetHelper.ViewModels;
+﻿using BudgetHelper.Services;
+using BudgetHelper.Services.DEMO;
+using BudgetHelper.ViewModels;
 using FreshMvvm;
 using System;
 using System.Globalization;
@@ -16,6 +18,7 @@ namespace BudgetHelper
             InitializeComponent();
             var page = FreshPageModelResolver.ResolvePageModel<StartPageModel>();
             MainPage = new FreshNavigationContainer(page);
+            FreshIOC.Container.Register<IProductService, ProductDemoService>();
             
         }
 
