@@ -7,6 +7,7 @@ C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\bin\Debu
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\bin\Debug\com.companyname.budgethelper-Signed.apk.idsig
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\bin\Debug\BudgetHelper.dll
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\bin\Debug\BudgetHelper.pdb
+C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\bin\Debug\en-US\BudgetHelper.resources.dll
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debug\110\build.props
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debug\110\adb.props
@@ -579,4 +580,3 @@ C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debu
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\bin\Debug\en-US\BudgetHelper.resources.dll
