@@ -11,15 +11,15 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackLayout Margin="20" Grid.Column="0" Orientation="Vertical">
-                <Entry Placeholder="{x:Static resources:AppResources.ProductNameInput}" FontSize="20" PlaceholderColor="Gray"/>
+                <Entry Placeholder="{x:Static resources:AppResources.ProductNameInput}" Text="{Binding NewProduct.Name}" FontSize="20" PlaceholderColor="Gray"/>
                 <Label VerticalTextAlignment="End" FontSize="15"
                        Text="{x:Static resources:AppResources.BroughtDate}" />
                 <DatePicker MinimumDate="01/01/2018" MaximumDate="12/31/2023" 
-                            VerticalOptions="Start" FontSize="15"/>
+                            VerticalOptions="Start" FontSize="15" Date="{Binding NewProduct.BroughtDate,Mode=TwoWay}"/>
                 <Label VerticalTextAlignment="End" FontSize="15"
                        Text="{x:Static resources:AppResources.ExpireDate}" />
                 <DatePicker MinimumDate="01/01/2018" MaximumDate="12/31/2023" 
-                            VerticalOptions="Start" FontSize="15"/>
+                            VerticalOptions="Start" FontSize="15" Date="{Binding NewProduct.ExpireDate,Mode=TwoWay}"/>
             </StackLayout>
             <Button Grid.ColumnSpan="2" HorizontalOptions="End" VerticalOptions="End" FontSize="50" Margin="0,0,15,15" Command="{Binding SaveProductCommand}" FontFamily="FA6R" Text="&#xf058;" TextColor="Green">
               
