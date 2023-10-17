@@ -1,4 +1,5 @@
-﻿using BudgetHelper.Services;
+﻿using BudgetHelper.Helpers.Messaging;
+using BudgetHelper.Services;
 using BudgetHelper.Services.DEMO;
 using BudgetHelper.ViewModels;
 using FreshMvvm;
@@ -19,6 +20,7 @@ namespace BudgetHelper
             var page = FreshPageModelResolver.ResolvePageModel<StartPageModel>();
             MainPage = new FreshNavigationContainer(page);
             FreshIOC.Container.Register<IProductService, ProductDemoService>();
+            FreshIOC.Container.Register<IMessageService, MessageService>();
             
         }
 

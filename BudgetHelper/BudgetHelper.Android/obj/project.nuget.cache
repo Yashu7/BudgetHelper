@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aQJGukU89t9HGI7Pi3x9AUrx6nANsRGFvneu9tYSlnvrFkjMaSZqqAEo7acj5wVsmTYUkUG554no9Bjd6zLDww==",
+  "dgSpecHash": "BFjXSpJEG9a+XekHESnwZnub8H3yoD68GNPG/+hyZZwZkYarYSC37cHXeb5Mwxw/Itoxb8jV/bBQEZJFdX4UZg==",
   "success": true,
   "projectFilePath": "C:\\Users\\pc\\source\\repos\\BudgetHelper\\BudgetHelper\\BudgetHelper.Android\\BudgetHelper.Android.csproj",
   "expectedPackageFiles": [
@@ -53,10 +53,22 @@
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.versionedparcelable\\1.1.1.6\\xamarin.androidx.versionedparcelable.1.1.1.6.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.viewpager\\1.0.0.6\\xamarin.androidx.viewpager.1.0.0.6.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.viewpager2\\1.0.0.8\\xamarin.androidx.viewpager2.1.0.0.8.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\xamarin.communitytoolkit\\2.0.6\\xamarin.communitytoolkit.2.0.6.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.google.android.material\\1.2.1.1\\xamarin.google.android.material.1.2.1.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.google.guava.listenablefuture\\1.0.0.2\\xamarin.google.guava.listenablefuture.1.0.0.2.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.2612 to 5.0.0.2012. Reference the package directly from the project to select a different version. \r\n BudgetHelper.Android -> BudgetHelper -> Xamarin.Forms (>= 5.0.0.2612) \r\n BudgetHelper.Android -> Xamarin.Forms (>= 5.0.0.2012)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "MonoAndroid,Version=v11.0"
+      ]
+    }
+  ]
 }

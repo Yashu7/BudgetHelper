@@ -13,6 +13,7 @@ C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netsta
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\Pages\MainPage.xaml.g.cs
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\Pages\StartPage.xaml.g.cs
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\Styles\BackgroundStyles.xaml.g.cs
+C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\Styles\ButtonStyles.xaml.g.cs
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\Styles\FrameStyles.xaml.g.cs
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\BudgetHelper.AssemblyInfoInputs.cache
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\BudgetHelper.AssemblyInfo.cs
@@ -22,4 +23,3 @@ C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netsta
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\BudgetHelper.dll
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\ref\BudgetHelper.dll
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\BudgetHelper.pdb
-C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\Styles\ButtonStyles.xaml.g.cs

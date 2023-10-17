@@ -2,8 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              NavigationPage.HasNavigationBar="false" 
-              xmlns:resources="clr-namespace:BudgetHelper.Localization"
+             xmlns:resources="clr-namespace:BudgetHelper.Localization"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="BudgetHelper.Pages.AddProductPage">
+    <ContentPage.Resources>
+        <Style x:Key="InvalidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Red" />
+        </Style>
+        <Style x:Key="ValidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Green" />
+        </Style>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -11,7 +20,12 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackLayout Margin="20" Grid.Column="0" Orientation="Vertical">
-                <Entry Placeholder="{x:Static resources:AppResources.ProductNameInput}" Text="{Binding NewProduct.Name}" FontSize="20" PlaceholderColor="Gray"/>
+                <Entry Placeholder="{x:Static resources:AppResources.ProductNameInput}" Text="{Binding NewProduct.Name}" 
+                       FontSize="20" PlaceholderColor="Gray">
+                    <Entry.Behaviors>
+                        
+                    </Entry.Behaviors>
+                </Entry>
                 <Label VerticalTextAlignment="End" FontSize="15"
                        Text="{x:Static resources:AppResources.BroughtDate}" />
                 <DatePicker MinimumDate="01/01/2018" MaximumDate="12/31/2023" 
@@ -20,6 +34,11 @@
                        Text="{x:Static resources:AppResources.ExpireDate}" />
                 <DatePicker MinimumDate="01/01/2018" MaximumDate="12/31/2023" 
                             VerticalOptions="Start" FontSize="15" Date="{Binding NewProduct.ExpireDate,Mode=TwoWay}"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Margin="2" FontSize="15"
+                           Text="{x:Static resources:AppResources.Open}" />
+                    <Switch x:Name="mySwitch"  IsToggled="{Binding NewProduct.IsOpen,Mode=TwoWay}"  />
+                </StackLayout>
             </StackLayout>
             <Button Grid.ColumnSpan="2" HorizontalOptions="End" VerticalOptions="End" FontSize="50" Margin="0,0,15,15" Command="{Binding SaveProductCommand}" FontFamily="FA6R" Text="&#xf058;" TextColor="Green">
               

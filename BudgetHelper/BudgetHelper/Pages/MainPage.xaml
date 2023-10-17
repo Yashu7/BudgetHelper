@@ -13,7 +13,7 @@
     <ContentPage.Content>
         <Grid>
             <BoxView Scale="4" AnchorX="1" AnchorY="0" BackgroundColor="#23A605"/>
-            <CollectionView ItemsSource="{Binding ProductItems}" SelectionMode="Single"
+            <CollectionView ItemsSource="{Binding ProductItems, Mode=TwoWay}" SelectionMode="Single"
                             SelectionChangedCommand="{Binding DeleteItemCommand}"
                             SelectedItem="{Binding SelectedProduct}"
                             SelectionChangedCommandParameter="{Binding SelectedProduct}">

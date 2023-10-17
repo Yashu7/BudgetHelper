@@ -1,4 +1,5 @@
-﻿using BudgetHelper.Models;
+﻿using BudgetHelper.Helpers.Messaging;
+using BudgetHelper.Models;
 using BudgetHelper.Services;
 using FreshMvvm;
 using System;
@@ -12,10 +13,23 @@ namespace BudgetHelper.ViewModels
 {
     class MainPageModel : FreshBasePageModel
     {
-        private IProductService _productService;
+        private readonly IProductService _productService;
+        private readonly IMessageService _messageService;
         public Command<ProductItem> DeleteItemCommand { get; set; }
         public Command NavigateToAddViewCommand { get; set; }
-        public ObservableCollection<ProductItem> ProductItems { get; set; }
+        private ObservableCollection<ProductItem> _productItems;
+        public ObservableCollection<ProductItem> ProductItems
+        {
+            get
+            {
+                return _productItems;
+            }
+            set
+            {
+                _productItems = value;
+                RaisePropertyChanged("ProductItems");
+            }
+        }
         private ProductItem _selectedProduct;
         public ProductItem SelectedProduct
         {
@@ -29,11 +43,16 @@ namespace BudgetHelper.ViewModels
                 RaisePropertyChanged("SelectedProduct");
             }
         }
-        public MainPageModel(IProductService productService)
+        protected override void ViewIsAppearing(object sender, EventArgs e)
+        {
+            base.ViewIsAppearing(sender, e);
+            Task.Run(async () => await InitializeMainList());
+        }
+        public MainPageModel(IProductService productService, IMessageService messageService)
         {
             InitializeCommands();
             _productService = productService;
-            Task.Run(async () => await InitializeMainList());
+            _messageService = messageService;
         }
         private void InitializeCommands()
         {
@@ -42,7 +61,7 @@ namespace BudgetHelper.ViewModels
         }
         private async Task InitializeMainList()
         {
-            ///Mock data, delete later
+            ///TODO: Mock data, delete later
             var productList = await _productService.GetProducts();
             ProductItems = new ObservableCollection<ProductItem>((IEnumerable<ProductItem>)productList);
         }
@@ -52,7 +71,14 @@ namespace BudgetHelper.ViewModels
         }
         public async void DeleteItem(ProductItem productItem)
         {
-            ProductItems.Remove(productItem);
+            
+            if (productItem is null)
+                return;
+            bool isDeleting = await _messageService.ShowMessageAskAsync("Delete selected product?");
+            if (isDeleting)
+                ProductItems.Remove(productItem);
+            else
+                SelectedProduct = null;
         }
         public async void NavigateToAddViev()
         {

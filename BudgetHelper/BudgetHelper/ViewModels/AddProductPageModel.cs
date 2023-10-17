@@ -1,4 +1,5 @@
-﻿using BudgetHelper.Models;
+﻿using BudgetHelper.Helpers.Messaging;
+using BudgetHelper.Models;
 using BudgetHelper.Services;
 using FreshMvvm;
 using System;
@@ -27,9 +28,12 @@ namespace BudgetHelper.ViewModels
             }
         }
         private readonly IProductService _productService;
-        public AddProductPageModel(IProductService productServicec)
+
+        private readonly IMessageService _messageService;
+        public AddProductPageModel(IProductService productServicec, IMessageService messageService)
         {
             _productService = productServicec;
+            _messageService = messageService;
             InitializeCommands();
         }
 
@@ -39,7 +43,12 @@ namespace BudgetHelper.ViewModels
         }
         private async void AddProduct()
         {
-            await _productService.PutProduct(null);
+            if (String.IsNullOrEmpty(NewProduct.Name))
+            {
+                await _messageService.ShowMessageAsync("Wypełnij brakujące dane: ","Nazwa produktu");
+                return;
+            }
+            await _productService.PutProduct(NewProduct);
         }
     }
 }
