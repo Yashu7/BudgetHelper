@@ -43,6 +43,32 @@ namespace BudgetHelper.ViewModels
                 RaisePropertyChanged("SelectedProduct");
             }
         }
+        private DateTime _minDate;
+        public DateTime MinDate
+        {
+            get
+            {
+                return _minDate;
+            }
+            set
+            {
+                _minDate = value;
+                RaisePropertyChanged("MinDate");
+            }
+        }
+        private DateTime _maxDate;
+        public DateTime MaxDate
+        {
+            get
+            {
+                return _maxDate;
+            }
+            set
+            {
+                _maxDate = value;
+                RaisePropertyChanged("MaxDate");
+            }
+        }
         protected override void ViewIsAppearing(object sender, EventArgs e)
         {
             base.ViewIsAppearing(sender, e);
@@ -53,6 +79,9 @@ namespace BudgetHelper.ViewModels
             InitializeCommands();
             _productService = productService;
             _messageService = messageService;
+
+            MinDate = DateTime.Now;
+            MaxDate = DateTime.Now.AddDays(365);
         }
         private void InitializeCommands()
         {

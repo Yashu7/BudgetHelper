@@ -65,6 +65,16 @@ namespace BudgetHelper.ViewModels
                 await _messageService.ShowMessageAsync("Wypełnij brakujące dane: ","Nazwa produktu");
                 return;
             }
+            if(NewProduct.ExpireDate < DateTime.Now.AddSeconds(-60))
+            {
+                await _messageService.ShowMessageAsync("Zmień datę przedawnienia", "Data przedawnienia produktu nie może być wcześniejsza niż data teraźniejsza.");
+                return;
+            }
+            if (NewProduct.ExpireDate < NewProduct.BroughtDate)
+            {
+                await _messageService.ShowMessageAsync("Nie poprawne daty", "Data przedawnienia produktu nie może być wcześniejsza niż data zakupu.");
+                return;
+            }
             IsLoading = true;
             await _productService.PutProduct(NewProduct);
             CoreMethods.RemoveFromNavigation();

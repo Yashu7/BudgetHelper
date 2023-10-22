@@ -8,7 +8,7 @@ namespace BudgetHelper.Helpers.DateManipulation
     {
         public static double CalculateDaysToExpire(DateTime expireDate)
         {
-            return (expireDate - DateTime.Now).Days;
+            return (expireDate - DateTime.Now).TotalDays;
         }
     }
 }

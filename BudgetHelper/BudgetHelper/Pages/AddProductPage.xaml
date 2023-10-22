@@ -28,11 +28,11 @@
                 </Entry>
                 <Label VerticalTextAlignment="End" FontSize="15"
                        Text="{x:Static resources:AppResources.BroughtDate}" />
-                <DatePicker MinimumDate="01/01/2018" MaximumDate="12/31/2023" 
+                <DatePicker MinimumDate="{Binding MinDate, Mode=TwoWay}" MaximumDate="{Binding MaxDate, Mode=TwoWay}" 
                             VerticalOptions="Start" FontSize="15" Date="{Binding NewProduct.BroughtDate,Mode=TwoWay}"/>
                 <Label VerticalTextAlignment="End" FontSize="15"
                        Text="{x:Static resources:AppResources.ExpireDate}" />
-                <DatePicker MinimumDate="01/01/2018" MaximumDate="12/31/2023" 
+                <DatePicker MinimumDate="{Binding MinDate, Mode=TwoWay}" MaximumDate="{Binding MaxDate, Mode=TwoWay}" 
                             VerticalOptions="Start" FontSize="15" Date="{Binding NewProduct.ExpireDate,Mode=TwoWay}"/>
                 <StackLayout Orientation="Horizontal">
                     <Label Margin="2" FontSize="15"

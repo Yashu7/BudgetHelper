@@ -15,7 +15,7 @@ namespace BudgetHelper.Services.DEMO
                 return 0;
 
             ApplicationSession.GetInstance().ProductItems.RemoveAll(x => x.Id == itemId);
-            return 1;
+            return await Task.FromResult(1);
         }
 
         public async Task<List<ProductItem>> GetProducts()
@@ -23,7 +23,7 @@ namespace BudgetHelper.Services.DEMO
             if (ApplicationSession.GetInstance().ProductItems == null)
                 InitializeDemoProducts();
 
-            return ApplicationSession.GetInstance().ProductItems;
+            return await Task.FromResult(ApplicationSession.GetInstance().ProductItems);
         }
 
         public async Task<int> PostProducts(List<ProductItem> products)
@@ -32,7 +32,7 @@ namespace BudgetHelper.Services.DEMO
                 ApplicationSession.GetInstance().ProductItems = new List<ProductItem>();
 
             ApplicationSession.GetInstance().ProductItems.AddRange(products);
-            return 1;
+            return await Task.FromResult(1);
         }
 
         public async Task<int> PutProduct(ProductItem item)
@@ -41,7 +41,7 @@ namespace BudgetHelper.Services.DEMO
                 ApplicationSession.GetInstance().ProductItems = new List<ProductItem>();
 
             ApplicationSession.GetInstance().ProductItems.Add(item);
-            return 1;
+            return await Task.FromResult(1);
         }
         private void InitializeDemoProducts()
         {
