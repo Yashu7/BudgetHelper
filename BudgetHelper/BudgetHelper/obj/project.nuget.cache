@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xILYavK1rc9x40RN4pMuqGjJ25QkW+rOyCGiug9GXJ8L54CNn26dRyNGz1NhZL520nNJpa/ziG7DV5wIFbFs2A==",
+  "dgSpecHash": "O1+vg7xiN+t58jyeVkFO3cylzk3FuRijLAsHBTZP1UEbXkZkwFXKDYWnw2AUYpspLXjzxvX9eK8TZS9OoY41Ww==",
   "success": true,
   "projectFilePath": "C:\\Users\\pc\\source\\repos\\BudgetHelper\\BudgetHelper\\BudgetHelper\\BudgetHelper.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\nlog\\5.2.5\\nlog.5.2.5.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\system.reactive\\4.4.1\\system.reactive.4.4.1.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.7.0\\system.reflection.emit.ilgeneration.4.7.0.nupkg.sha512",

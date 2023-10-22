@@ -50,6 +50,15 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "NLog/5.2.5": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NLog.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {}
+        }
+      },
       "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
@@ -352,6 +361,30 @@
         "lib/netstandard1.0/_._",
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
+      ]
+    },
+    "NLog/5.2.5": {
+      "sha512": "mMXtbAxfNzqkXcBjhJ3wN3rH7kwUZ0JL0GrUBI/lso7+tQ/HC4e5SnlmR3R5qQ9zWbqMbjxeH37rIf0yQGWTiA==",
+      "type": "package",
+      "path": "nlog/5.2.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "N.png",
+        "lib/net35/NLog.dll",
+        "lib/net35/NLog.xml",
+        "lib/net45/NLog.dll",
+        "lib/net45/NLog.xml",
+        "lib/net46/NLog.dll",
+        "lib/net46/NLog.xml",
+        "lib/netstandard1.3/NLog.dll",
+        "lib/netstandard1.3/NLog.xml",
+        "lib/netstandard1.5/NLog.dll",
+        "lib/netstandard1.5/NLog.xml",
+        "lib/netstandard2.0/NLog.dll",
+        "lib/netstandard2.0/NLog.xml",
+        "nlog.5.2.5.nupkg.sha512",
+        "nlog.nuspec"
       ]
     },
     "System.Numerics.Vectors/4.5.0": {
@@ -1077,6 +1110,7 @@
     ".NETStandard,Version=v2.0": [
       "FreshMvvm >= 4.0.1",
       "NETStandard.Library >= 2.0.3",
+      "NLog >= 5.2.5",
       "Xamarin.CommunityToolkit >= 2.0.6",
       "Xamarin.Essentials >= 1.6.1",
       "Xamarin.Forms >= 5.0.0.2612"
@@ -1139,6 +1173,10 @@
             "target": "Package",
             "version": "[2.0.3, )",
             "autoReferenced": true
+          },
+          "NLog": {
+            "target": "Package",
+            "version": "[5.2.5, )"
           },
           "Xamarin.CommunityToolkit": {
             "target": "Package",

@@ -3,7 +3,6 @@ C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\bin\Debug\netsta
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\bin\Debug\netstandard2.0\ref\BudgetHelper.dll
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\bin\Debug\netstandard2.0\BudgetHelper.pdb
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\bin\Debug\netstandard2.0\en-US\BudgetHelper.resources.dll
-C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\BudgetHelper.csproj.AssemblyReference.cache
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\BudgetHelper.Localization.AppResources.resources
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\BudgetHelper.Localization.AppResources.en-US.resources
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\BudgetHelper.csproj.GenerateResource.cache
@@ -23,3 +22,4 @@ C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netsta
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\BudgetHelper.dll
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\ref\BudgetHelper.dll
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\BudgetHelper.pdb
+C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\BudgetHelper.csproj.AssemblyReference.cache

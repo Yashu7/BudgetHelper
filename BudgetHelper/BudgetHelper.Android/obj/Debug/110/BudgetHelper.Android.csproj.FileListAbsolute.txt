@@ -74,6 +74,7 @@ C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debu
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debug\110\android\assets\mscorlib.dll
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debug\110\android\assets\mscorlib.pdb
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debug\110\android\assets\netstandard.dll
+C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debug\110\android\assets\NLog.dll
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debug\110\android\assets\System.ComponentModel.Composition.dll
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debug\110\android\assets\System.ComponentModel.Composition.pdb
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper.Android\obj\Debug\110\android\assets\System.Core.dll

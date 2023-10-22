@@ -7,6 +7,7 @@ public class MonoPackageManager_Resources {
 		"FormsViewGroup.dll",
 		"FreshIOC.dll",
 		"FreshMvvm.dll",
+		"NLog.dll",
 		"System.Reactive.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",

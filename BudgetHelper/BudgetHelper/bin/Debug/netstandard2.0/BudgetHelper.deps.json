@@ -11,6 +11,7 @@
         "dependencies": {
           "FreshMvvm": "4.0.1",
           "NETStandard.Library": "2.0.3",
+          "NLog": "5.2.5",
           "Xamarin.CommunityToolkit": "2.0.6",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2612"
@@ -45,6 +46,14 @@
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "NLog/5.2.5": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.2.5.2160"
+          }
         }
       },
       "System.Numerics.Vectors/4.5.0": {
@@ -197,6 +206,13 @@
       "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "NLog/5.2.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mMXtbAxfNzqkXcBjhJ3wN3rH7kwUZ0JL0GrUBI/lso7+tQ/HC4e5SnlmR3R5qQ9zWbqMbjxeH37rIf0yQGWTiA==",
+      "path": "nlog/5.2.5",
+      "hashPath": "nlog.5.2.5.nupkg.sha512"
     },
     "System.Numerics.Vectors/4.5.0": {
       "type": "package",
