@@ -3,46 +3,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              NavigationPage.HasNavigationBar="false" 
              x:Class="BudgetHelper.Pages.MainPage"
+             xmlns:local="clr-namespace:BudgetHelper.Helpers.Templates"
              xmlns:resources="clr-namespace:BudgetHelper.Localization"
              xmlns:converters="clr-namespace:BudgetHelper.Helpers.Converters">
     <ContentPage.Resources>
         <ResourceDictionary>
+            <DataTemplate x:Key="NewProductItemTemplate">
+                <Frame BackgroundColor="{Binding ExpireDate, Converter={StaticResource DateToColorConverter}}" BorderColor="Transparent">
+                    <Grid Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0" Orientation="Vertical">
+                            <Label Text="{Binding Name}" VerticalTextAlignment="Center"/>
+                            <Label Text="{x:Static resources:AppResources.BroughtDate}" />
+                            <Label Text="{x:Static resources:AppResources.ExpireDate}" />
+                            <Label IsVisible="{Binding IsOpen}" Text="{x:Static resources:AppResources.DaysToExpireAfterOpening}" />
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" Orientation="Vertical">
+                            <Label Text="{Binding IsOpen, Converter={StaticResource BoolToProductStatusConverter}}" VerticalTextAlignment="Center"/>
+                            <Label Text="{Binding BroughtDate}" VerticalTextAlignment="Center"/>
+                            <Label Text="{Binding ExpireDate}" VerticalTextAlignment="Center"/>
+                            <Label IsVisible="{Binding IsOpen}" Text="{Binding ExpireDateAfterOpen}" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+            </DataTemplate>
+            <local:ProductItemTemplateSelector x:Key="ProductItemTemplateSelector"
+                                               NewProductItemTemplate="{StaticResource NewProductItemTemplate}"/>
             <converters:BoolToProductStatusConverter x:Key="BoolToProductStatusConverter"/>
+            <converters:DateToColorConverter x:Key="DateToColorConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
         <Grid>
             <BoxView Scale="4" AnchorX="1" AnchorY="0" BackgroundColor="#23A605"/>
-            <CollectionView ItemsSource="{Binding ProductItems, Mode=TwoWay}" SelectionMode="Single"
+            <CollectionView ItemsSource="{Binding ProductItems, Mode=TwoWay}" SelectionMode="Single" ItemTemplate="{StaticResource ProductItemTemplateSelector}"
                             SelectionChangedCommand="{Binding DeleteItemCommand}"
                             SelectedItem="{Binding SelectedProduct}"
                             SelectionChangedCommandParameter="{Binding SelectedProduct}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame BackgroundColor="Transparent" BorderColor="Transparent" >
-                            <Grid Padding="10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                
-                                <StackLayout Grid.Column="0" Orientation="Vertical">
-                                    <Label Text="{Binding Name}" VerticalTextAlignment="Center"/>
-                                    <Label Text="{x:Static resources:AppResources.BroughtDate}" />
-                                    <Label Text="{x:Static resources:AppResources.ExpireDate}" />
-                                    <Label IsVisible="{Binding IsOpen}" Text="{x:Static resources:AppResources.DaysToExpireAfterOpening}" />
-                                </StackLayout>
-                                <StackLayout Grid.Column="1" Orientation="Vertical">
-                                    <Label Text="{Binding IsOpen, Converter={StaticResource BoolToProductStatusConverter}}" VerticalTextAlignment="Center"/>
-                                    <Label Text="{Binding BroughtDate}" VerticalTextAlignment="Center"/>
-                                    <Label Text="{Binding ExpireDate}" VerticalTextAlignment="Center"/>
-                                    <Label IsVisible="{Binding IsOpen}" Text="{Binding ExpireDateAfterOpen}" VerticalTextAlignment="Center"/>
-                                </StackLayout>
-
-                            </Grid>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
             </CollectionView>
             <Button VerticalOptions="End" HorizontalOptions="End" Margin="25" Command="{Binding NavigateToAddViewCommand}" Text="+"></Button>
         </Grid>
