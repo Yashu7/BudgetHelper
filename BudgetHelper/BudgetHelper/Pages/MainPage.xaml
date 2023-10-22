@@ -9,11 +9,12 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="NewProductItemTemplate">
-                <Frame BackgroundColor="{Binding ExpireDate, Converter={StaticResource DateToColorConverter}}" BorderColor="Transparent">
-                    <Grid Padding="10">
+                <Frame BackgroundColor="{Binding ., Converter={StaticResource DateToColorConverter}}" BorderColor="Transparent">
+                    <Grid Padding="10" >
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
                         <StackLayout Grid.Column="0" Orientation="Vertical">
                             <Label Text="{Binding Name}" VerticalTextAlignment="Center"/>
@@ -26,6 +27,12 @@
                             <Label Text="{Binding BroughtDate}" VerticalTextAlignment="Center"/>
                             <Label Text="{Binding ExpireDate}" VerticalTextAlignment="Center"/>
                             <Label IsVisible="{Binding IsOpen}" Text="{Binding ExpireDateAfterOpen}" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="2" VerticalOptions="CenterAndExpand">
+                            <Button Command="{Binding BindingContext.DeleteItemCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}" FontFamily="FA6R" Text="&#xf058;"
+                                    Padding="50,0,0,0" FontSize="25" BackgroundColor="Transparent"/>
+                            <Button Command="{Binding BindingContext.EditItemCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}" FontFamily="FA6R" Text="&#xf044;"
+                                    Padding="50,0,0,0" FontSize="25" BackgroundColor="Transparent"/>
                         </StackLayout>
                     </Grid>
                 </Frame>
@@ -40,9 +47,7 @@
         <Grid>
             <BoxView Scale="4" AnchorX="1" AnchorY="0" BackgroundColor="#23A605"/>
             <CollectionView ItemsSource="{Binding ProductItems, Mode=TwoWay}" SelectionMode="Single" ItemTemplate="{StaticResource ProductItemTemplateSelector}"
-                            SelectionChangedCommand="{Binding DeleteItemCommand}"
-                            SelectedItem="{Binding SelectedProduct}"
-                            SelectionChangedCommandParameter="{Binding SelectedProduct}">
+                            SelectedItem="{Binding SelectedProduct}">
             </CollectionView>
             <Button VerticalOptions="End" HorizontalOptions="End" Margin="25" Command="{Binding NavigateToAddViewCommand}" Text="+"></Button>
         </Grid>

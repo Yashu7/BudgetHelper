@@ -16,6 +16,7 @@ namespace BudgetHelper.ViewModels
         private readonly IProductService _productService;
         private readonly IMessageService _messageService;
         public Command<ProductItem> DeleteItemCommand { get; set; }
+        public Command<ProductItem> EditItemCommand { get; set; }
         public Command NavigateToAddViewCommand { get; set; }
         private ObservableCollection<ProductItem> _productItems;
         public ObservableCollection<ProductItem> ProductItems
@@ -86,6 +87,7 @@ namespace BudgetHelper.ViewModels
         private void InitializeCommands()
         {
             DeleteItemCommand = new Command<ProductItem>(DeleteItem);
+            EditItemCommand = new Command<ProductItem>(EditItem);
             NavigateToAddViewCommand = new Command(NavigateToAddViev);
         }
         private async Task InitializeMainList()
@@ -100,7 +102,6 @@ namespace BudgetHelper.ViewModels
         }
         public async void DeleteItem(ProductItem productItem)
         {
-            
             if (productItem is null)
                 return;
             bool isDeleting = await _messageService.ShowMessageAskAsync("Delete selected product?");
@@ -108,6 +109,13 @@ namespace BudgetHelper.ViewModels
                 ProductItems.Remove(productItem);
             else
                 SelectedProduct = null;
+        }
+        public async void EditItem(ProductItem productItem)
+        {
+            if (productItem is null)
+                return;
+
+            await CoreMethods.PushPageModel<EditProductPageModel>(productItem);
         }
         public async void NavigateToAddViev()
         {

@@ -23,6 +23,7 @@ namespace BudgetHelper.Models
         {
             BroughtDate = DateTime.Now;
             ExpireDate = DateTime.Now;
+            DaysToExpireAfterOpening = 1;
         }
         public ProductItem(string name, int daysToExpire, DateTime broughtDate, DateTime expireDate, bool isOpen = false)
         {

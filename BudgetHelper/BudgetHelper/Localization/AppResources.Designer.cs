@@ -97,6 +97,15 @@ namespace BudgetHelper.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ile dni może być otwarte:.
+        /// </summary>
+        internal static string HowManyCanBeOpen {
+            get {
+                return ResourceManager.GetString("HowManyCanBeOpen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Otwarte.
         /// </summary>
         internal static string Open {

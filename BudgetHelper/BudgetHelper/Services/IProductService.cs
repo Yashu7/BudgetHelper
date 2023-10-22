@@ -12,5 +12,6 @@ namespace BudgetHelper.Services
         Task<int> PostProducts(List<ProductItem> products);
         Task<int> PutProduct(ProductItem item);
         Task<int> DeleteProduct(int itemId);
+        Task<int> UpdateProduct(ProductItem item);
     }
 }

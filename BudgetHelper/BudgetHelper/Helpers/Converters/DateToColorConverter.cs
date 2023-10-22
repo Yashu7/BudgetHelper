@@ -1,4 +1,5 @@
 ﻿using BudgetHelper.Helpers.DateManipulation;
+using BudgetHelper.Models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -11,8 +12,10 @@ namespace BudgetHelper.Helpers.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            DateTime finalDate = (DateTime)value;
-            double daysleft = ExpireDateCalculator.CalculateDaysToExpire(finalDate);
+            if (value is null)
+                return Color.Transparent;
+            ProductItem product = (ProductItem)value;
+            double daysleft = ExpireDateCalculator.CalculateDaysToExpire(product.IsOpen ? product.ExpireDateAfterOpen : product.ExpireDate);
             switch(daysleft)
             {
                 case double d when (d > 10):

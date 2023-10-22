@@ -2,6 +2,7 @@
 using BudgetHelper.Singletons;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,6 +44,18 @@ namespace BudgetHelper.Services.DEMO
             ApplicationSession.GetInstance().ProductItems.Add(item);
             return await Task.FromResult(1);
         }
+
+        public async Task<int> UpdateProduct(ProductItem item)
+        {
+            if (ApplicationSession.GetInstance().ProductItems == null)
+                InitializeDemoProducts();
+            var productToUpdate = ApplicationSession.GetInstance().ProductItems.FirstOrDefault(x => x.Id == item.Id);
+            if (productToUpdate != null)
+                productToUpdate = item;
+
+            return await Task.FromResult(1);
+        }
+
         private void InitializeDemoProducts()
         {
             ApplicationSession.GetInstance().ProductItems = new List<ProductItem>()

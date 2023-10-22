@@ -23,3 +23,4 @@ C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netsta
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\ref\BudgetHelper.dll
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\BudgetHelper.pdb
 C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\BudgetHelper.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\BudgetHelper\BudgetHelper\BudgetHelper\obj\Debug\netstandard2.0\Pages\EditProductPage.xaml.g.cs

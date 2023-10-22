@@ -129,6 +129,9 @@
   <data name="ExpireDate" xml:space="preserve">
     <value>Data ważności:</value>
   </data>
+  <data name="HowManyCanBeOpen" xml:space="preserve">
+    <value>Ile dni może być otwarte:</value>
+  </data>
   <data name="Open" xml:space="preserve">
     <value>Otwarte</value>
   </data>
