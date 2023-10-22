@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BudgetHelper.Helpers.DateManipulation;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
@@ -11,7 +12,21 @@ namespace BudgetHelper.Helpers.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             DateTime finalDate = (DateTime)value;
-            return Color.Transparent;
+            double daysleft = ExpireDateCalculator.CalculateDaysToExpire(finalDate);
+            switch(daysleft)
+            {
+                case double d when (d > 10):
+                    return Color.Transparent;
+                case double d when (d <= 10 && d >= 3):
+                    return Color.Orange;
+                case double d when (d < 3 && d >= 1):
+                    return Color.OrangeRed;
+                case double d when (d == 0):
+                    return Color.Red;
+                default:
+                    return Color.Transparent;
+            }
+            
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
