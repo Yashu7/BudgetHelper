@@ -22,24 +22,25 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackLayout Margin="20" Grid.Column="0" Orientation="Vertical">
-                <Entry Placeholder="{x:Static resources:AppResources.ProductNameInput}" Text="{Binding NewProduct.Name}" 
-                       FontSize="20" PlaceholderColor="Gray"/>
+                <Entry Placeholder="{x:Static resources:AppResources.ProductNameInput}" Text="{Binding ExistingProduct.Name}" 
+                       FontSize="20" PlaceholderColor="Gray" IsEnabled="False"/>
                 <Label VerticalTextAlignment="End" FontSize="15"
                        Text="{x:Static resources:AppResources.BroughtDate}" />
-                <DatePicker MinimumDate="{Binding MinDate, Mode=TwoWay}" MaximumDate="{Binding MaxDate, Mode=TwoWay}" 
-                            VerticalOptions="Start" FontSize="15" Date="{Binding NewProduct.BroughtDate,Mode=TwoWay}"/>
+                <DatePicker MinimumDate="{Binding MinDate, Mode=TwoWay}" MaximumDate="{Binding MaxDate, Mode=TwoWay}" IsEnabled="False"
+
+                            VerticalOptions="Start" FontSize="15" Date="{Binding ExistingProduct.BroughtDate,Mode=TwoWay}"/>
                 <Label VerticalTextAlignment="End" FontSize="15"
                        Text="{x:Static resources:AppResources.ExpireDate}" />
                 <DatePicker MinimumDate="{Binding MinDate, Mode=TwoWay}" MaximumDate="{Binding MaxDate, Mode=TwoWay}" 
-                            VerticalOptions="Start" FontSize="15" Date="{Binding NewProduct.ExpireDate,Mode=TwoWay}"/>
+                            VerticalOptions="Start" FontSize="15" Date="{Binding ExistingProduct.ExpireDate,Mode=TwoWay}"/>
                 <StackLayout Orientation="Horizontal">
                     <Label Margin="2" FontSize="15"
                            Text="{x:Static resources:AppResources.Open}" />
-                    <Switch x:Name="mySwitch"  IsToggled="{Binding NewProduct.IsOpen,Mode=TwoWay}"  />
+                    <Switch x:Name="mySwitch"  IsToggled="{Binding ExistingProduct.IsOpen,Mode=TwoWay}"  />
                 </StackLayout>
                 <Label VerticalTextAlignment="End" FontSize="15"
                        Text="{x:Static resources:AppResources.HowManyCanBeOpen}" />
-                <Picker x:Name="digitPicker" SelectedItem="{Binding NewProduct.DaysToExpireAfterOpening,Mode=TwoWay, Converter={StaticResource StringToIntConverter}}">
+                <Picker x:Name="digitPicker" SelectedItem="{Binding ExistingProduct.DaysToExpireAfterOpening,Mode=TwoWay, Converter={StaticResource StringToIntConverter}}">
                     <Picker.Items>
                         <x:String>1</x:String>
                         <x:String>2</x:String>

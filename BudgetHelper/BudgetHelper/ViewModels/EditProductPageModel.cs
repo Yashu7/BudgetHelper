@@ -41,12 +41,15 @@ namespace BudgetHelper.ViewModels
         private readonly IProductService _productService;
 
         private readonly IMessageService _messageService;
-        public EditProductPageModel(ProductItem exisitngProduct, IProductService productServicec, IMessageService messageService)
+        public EditProductPageModel(IProductService productServicec, IMessageService messageService)
         {
             _productService = productServicec;
             _messageService = messageService;
-            ExistingProduct = exisitngProduct;
             InitializeCommands();
+        }
+        public override void Init(object exisitngProduct) 
+        {
+            ExistingProduct = (ProductItem)exisitngProduct;
         }
         private void InitializeCommands()
         {

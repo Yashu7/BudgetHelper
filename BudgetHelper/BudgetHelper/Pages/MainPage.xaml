@@ -17,7 +17,7 @@
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
                         <StackLayout Grid.Column="0" Orientation="Vertical">
-                            <Label Text="{Binding Name}" VerticalTextAlignment="Center"/>
+                            <Label Text="{Binding Name}" FontAttributes="Bold" VerticalTextAlignment="Center"/>
                             <Label Text="{x:Static resources:AppResources.BroughtDate}" />
                             <Label Text="{x:Static resources:AppResources.ExpireDate}" />
                             <Label IsVisible="{Binding IsOpen}" Text="{x:Static resources:AppResources.DaysToExpireAfterOpening}" />
@@ -29,7 +29,7 @@
                             <Label IsVisible="{Binding IsOpen}" Text="{Binding ExpireDateAfterOpen}" VerticalTextAlignment="Center"/>
                         </StackLayout>
                         <StackLayout Grid.Column="2" VerticalOptions="CenterAndExpand">
-                            <Button Command="{Binding BindingContext.DeleteItemCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}" FontFamily="FA6R" Text="&#xf058;"
+                            <Button Command="{Binding BindingContext.DeleteItemCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}" FontFamily="FA6R" Text="&#xf2ed;"
                                     Padding="50,0,0,0" FontSize="25" BackgroundColor="Transparent"/>
                             <Button Command="{Binding BindingContext.EditItemCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}" FontFamily="FA6R" Text="&#xf044;"
                                     Padding="50,0,0,0" FontSize="25" BackgroundColor="Transparent"/>
